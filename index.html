@@ -9,32 +9,53 @@
     <style media="screen">
         body {
             font: 16px/1.45 "Source Code Pro", sans-serif;
-            padding: 30px 50px;
+            padding: 50px;
             background-color: hsl(46.3,100%,93.1%);
-            color: #333;
+            color: hsl(0,0%,20%);
         }
 
         ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
 
         li {
             line-height: 2.5;
             position: relative;
-            padding-left: 20px;
+            min-height: 40px;
         }
 
-        li:before {
-            content: '>';
+        li ul li:before {
+            content: '\00B7\00B7\00B7\00B7';
+            color: hsla(0,0%,20%, 0.2);
+            margin-right: 3px;
+        }
+
+        span {
+            position: relative;
+        }
+
+        span:after {
+            content: '\00AC';
             position: absolute;
-            left: 0;
+            right: -15px;
+            color: hsla(0,0%,20%, 0.2);
+        }
+
+        h1 {
+            margin: 0;
+            line-height: 40px;
+        }
+
+        h1 span:after {
+            right: -25px;
         }
 
         a {
-            color: #333;
+            color: hsl(0,0%,20%);
             text-decoration: none;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid hsl(0,0%,20%);
             padding-bottom: 3px;
         }
 
@@ -45,21 +66,23 @@
     </style>
 </head>
 <body>
-    <h1>Bernardo Raposo</h1>
     <ul>
-        <li>I code and I design, I also let you decide my job title</li>
-        <li>Living in London, UK</li>
-        <li>Working at <a href="http://editd.com">EDITD</a></li>
-        <li>Here's some of my previous work:
+        <li><h1><span>Bernardo Raposo</span></h1></li>
+        <li><span></span></li>
+        <li><span>I code and I design, I also let you decide my job title</span></li>
+        <li><span>Living in London, UK</span></li>
+        <li><span>Working at <a href="http://editd.com">EDITD</a></span></li>
+        <li><span>Here's some of my previous work:</span>
             <ul>
-                <li><a href="http://cantelisboa.com/en/">Cantê</a></li>
-                <li><a href="http://marthasgroup.com/en/">Martha's Group</a></li>
-                <li><a href="http://tantomar.pt/en/">Tanto Mar</a></li>
-                <li><a href="http://domvinho.com/en/">Dom Vinho</a></li>
-                <li><a href="http://coolappse.com/old.html">CoolApps(e)</a></li>
-                <li><a href="http://fontedeamores.pt/index_en.html">Fonte de Amores</a></li>
+                <li><span><a href="http://cantelisboa.com/en/">Cantê</a></span></li>
+                <li><span><a href="http://marthasgroup.com/en/">Martha's Group</a></span></li>
+                <li><span><a href="http://tantomar.pt/en/">Tanto Mar</a></span></li>
+                <li><span><a href="http://domvinho.com/en/">Dom Vinho</a></span></li>
+                <li><span><a href="http://coolappse.com/old.html">CoolApps(e)</a></span></li>
+                <li><span><a href="http://fontedeamores.pt/index_en.html">Fonte de Amores</a></span></li>
             </ul>
         </li>
+        <li><span></span></li>
         <li>Say hi on <a href="https://twitter.com/braposo">Twitter</a>, <a href="https://instagram.com/braposo">Instagram</a> or <a href="mailto:xhi@berxnarxdoraxpoxso.com" onmouseover="this.href=this.href.replace(/x/g,'');">Email</a></li>
     </ul>
     <script>
