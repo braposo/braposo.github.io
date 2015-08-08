@@ -11,9 +11,25 @@
 
         body {
             font: 16px/1.45 "Source Code Pro", sans-serif;
-            padding: 50px;
+            padding: 15px;
             background-color: hsl(46.3,100%,93.1%);
             color: hsl(0,0%,20%);
+        }
+
+        h1 {
+            margin: 0;
+            line-height: 40px;
+        }
+
+        a {
+            color: hsl(0,0%,20%);
+            text-decoration: none;
+            border-bottom: 1px solid hsl(0,0%,20%);
+            padding-bottom: 3px;
+        }
+
+        a:hover {
+            border-width: 2px;
         }
 
         ul {
@@ -52,22 +68,12 @@
             color: hsla(0,0%,20%, 0.15);
         }
 
-        h1 {
-            margin: 0;
-            line-height: 40px;
+        /* Mobile-first approach */
+        @media screen and (min-width: 600px) {
+            body {
+                padding: 50px;
+            }
         }
-
-        a {
-            color: hsl(0,0%,20%);
-            text-decoration: none;
-            border-bottom: 1px solid hsl(0,0%,20%);
-            padding-bottom: 3px;
-        }
-
-        a:hover {
-            border-width: 2px;
-        }
-
     </style>
 </head>
 <body>
