@@ -8,7 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <style media="screen">
         /* For the sake of simplicity no classes were used */
-        
+
         body {
             font: 16px/1.45 "Source Code Pro", sans-serif;
             padding: 50px;
@@ -28,19 +28,28 @@
             min-height: 40px;
         }
 
+
+        /* Adds mdash in a slighty hackerish way */
+        body > ul > li > span:not(:empty):before {
+            content: '\2014';
+            color: hsla(0,0%,20%, 0.5);
+            margin-right: 10px;
+        }
+
+        /* Adds spacing dots for identation */
         li ul li:before {
             content: '\00B7\00B7\00B7\00B7';
-            color: hsla(0,0%,20%, 0.2);
-            margin-right: 3px;
+            color: hsla(0,0%,20%, 0.15);
         }
 
         span {
             position: relative;
         }
 
+        /* Return char at the end of the line */
         span:after {
             content: '\00AC';
-            color: hsla(0,0%,20%, 0.2);
+            color: hsla(0,0%,20%, 0.15);
         }
 
         h1 {
@@ -65,10 +74,10 @@
     <ul>
         <li><h1><span>Bernardo Raposo</span></h1></li>
         <li><span></span></li>
-        <li><span>&mdash; I code and I design, you decide my job title</span></li>
-        <li><span>&mdash; Living in London, UK</span></li>
-        <li><span>&mdash; Working at <a href="http://editd.com">EDITD</a></span></li>
-        <li><span>&mdash; Here's some of my previous work:</span>
+        <li><span>I code and I design, you decide my job title</span></li>
+        <li><span>Living in London, UK</span></li>
+        <li><span>Working at <a href="http://editd.com">EDITD</a></span></li>
+        <li><span>Here's some of my previous work:</span>
             <ul>
                 <li><span><a href="http://cantelisboa.com/en/">Cantê</a></span></li>
                 <li><span><a href="http://marthasgroup.com/en/">Martha's Group</a></span></li>
@@ -79,7 +88,7 @@
             </ul>
         </li>
         <li><span></span></li>
-        <li><span>&mdash; Say hi on <a href="https://twitter.com/braposo">Twitter</a>, <a href="https://instagram.com/braposo">Instagram</a> or <a href="mailto:xhi@berxnarxdoraxpoxso.com" onmouseover="this.href=this.href.replace(/x/g,'');">Email</a></span></li>
+        <li><span>Say hi on <a href="https://twitter.com/braposo">Twitter</a>, <a href="https://instagram.com/braposo">Instagram</a> or <a href="mailto:xhi@berxnarxdoraxpoxso.com" onmouseover="this.href=this.href.replace(/x/g,'');">Email</a></span></li>
     </ul>
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
