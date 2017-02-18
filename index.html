@@ -24,12 +24,13 @@
         a {
             color: hsl(0,0%,20%);
             text-decoration: none;
-            border-bottom: 1px solid hsl(0,0%,20%);
-            padding-bottom: 3px;
+            padding-bottom: 2px;
+            box-shadow: 0 1px hsl(0,0%,20%);
+            transition: box-shadow 300ms cubic-bezier(0.77, -0.46, 0.16, 1.49);
         }
 
         a:hover {
-            border-width: 2px;
+            box-shadow: 0 3px hsl(0,0%,20%);
         }
 
         ul {
