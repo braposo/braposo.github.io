@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Bernardo Raposo</title>
@@ -9,28 +10,50 @@
     <style media="screen">
         /* For the sake of simplicity no classes were used */
 
+         :root {
+            --bg-color: hsl(10, 90%, 56%);
+            --text-color: hsl(0, 0%, 24%);
+            --text-light-color: hsl(10, 90%, 45%);
+            --hover-color: hsl(0, 0%, 14%);
+            --spacing: 8px;
+        }
+
         body {
             font: 16px/1.45 "Source Code Pro", sans-serif;
-            padding: 15px;
-            background-color: hsl(46.3,100%,93.1%);
-            color: hsl(0,0%,20%);
+            padding: calc(var(--spacing) * 2);
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
 
         h1 {
             margin: 0;
-            line-height: 40px;
+            line-height: calc(var(--spacing) * 5);
+        }
+
+        h1>span,
+        li>span:empty {
+            padding-left: 0;
         }
 
         a {
-            color: hsl(0,0%,20%);
+            color: var(--text-color);
             text-decoration: none;
-            padding-bottom: 2px;
-            box-shadow: 0 1px hsl(0,0%,20%);
-            transition: box-shadow 300ms cubic-bezier(0.77, -0.46, 0.16, 1.49);
+            background: -webkit-linear-gradient(var(--bg-color), var(--bg-color)), -webkit-linear-gradient(var(--bg-color), var(--bg-color)), -webkit-linear-gradient(var(--text-color), var(--text-color));
+            background: -moz-linear-gradient(var(--bg-color), var(--bg-color)), -moz-linear-gradient(var(--bg-color), var(--bg-color)), -moz-linear-gradient(var(--text-color), var(--text-color));
+            background: -o-linear-gradient(var(--bg-color), var(--bg-color)), -o-linear-gradient(var(--bg-color), var(--bg-color)), -o-linear-gradient(var(--text-color), var(--text-color));
+            background: -ms-linear-gradient(var(--bg-color), var(--bg-color)), -ms-linear-gradient(var(--bg-color), var(--bg-color)), -ms-linear-gradient(var(--text-color), var(--text-color));
+            background: linear-gradient(var(--bg-color), var(--bg-color)), linear-gradient(var(--bg-color), var(--bg-color)), linear-gradient(var(--text-color), var(--text-color));
+            -webkit-background-size: .05em 1px, .05em 1px, 1px 1px;
+            -moz-background-size: .05em 1px, .05em 1px, 1px 1px;
+            background-size: .05em 1px, .05em 1px, 1px 1px;
+            background-repeat: no-repeat, no-repeat, repeat-x;
+            text-shadow: 0.03em 0 var(--bg-color), -0.03em 0 var(--bg-color), 0 0.03em var(--bg-color), 0 -0.03em var(--bg-color), 0.06em 0 var(--bg-color), -0.06em 0 var(--bg-color), 0.09em 0 var(--bg-color), -0.09em 0 var(--bg-color), 0.12em 0 var(--bg-color), -0.12em 0 var(--bg-color), 0.15em 0 var(--bg-color), -0.15em 0 var(--bg-color);
+            background-position: 0 87%, 100% 87%, 0 87%;
         }
 
         a:hover {
-            box-shadow: 0 3px hsl(0,0%,20%);
+            color: var(--hover-color);
+            background: none;
         }
 
         ul {
@@ -42,44 +65,49 @@
         li {
             line-height: 2.5;
             position: relative;
-            min-height: 40px;
+            min-height: calc(var(--spacing) * 5);
         }
-
-
         /* Adds mdash in a slighty hackerish way */
-        body > ul > li > span:not(:empty):before {
+        /*body>ul>li>span:not(:empty):before {
             content: '\2014';
-            color: hsla(0,0%,20%, 0.5);
-            margin-right: 10px;
-        }
+            color: var(--text-light-color);
 
+        }*/
         /* Adds spacing dots for identation */
-        li ul li:before {
+
+        body>ul>li>span:not(:empty):before {
             content: '\00B7\00B7\00B7\00B7';
-            color: hsla(0,0%,20%, 0.15);
+            color: var(--text-light-color);
+            margin-left: calc(var(--spacing) * -5);
         }
 
         span {
             position: relative;
+            padding-left: calc(var(--spacing) * 5);
+            display: inline-block;
+            line-height: 1.8;
         }
-
         /* Return char at the end of the line */
+
         span:after {
             content: '\00AC';
-            color: hsla(0,0%,20%, 0.15);
+            color: var(--text-light-color);
         }
-
         /* Mobile-first approach */
+
         @media screen and (min-width: 600px) {
             body {
-                padding: 50px;
+                padding: calc(var(--spacing) * 6);
             }
         }
     </style>
 </head>
+
 <body>
     <ul>
-        <li><h1><span>Bernardo Raposo</span></h1></li>
+        <li>
+            <h1><span>Bernardo Raposo</span></h1>
+        </li>
         <li><span></span></li>
         <li><span>I design and code, you decide my job title</span></li>
         <li><span>Living in London, UK</span></li>
@@ -88,14 +116,16 @@
         <li><span>Say hi on <a href="https://twitter.com/braposo">Twitter</a>, <a href="https://medium.com/@braposo">Medium</a>, <a href="https://instagram.com/braposo">Instagram</a> or <a href="mailto:xhi@berxnarxdoraxpoxso.com" onmouseover="this.href=this.href.replace(/x/g,'');">Email</a></span></li>
     </ul>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-11818664-1', 'auto');
-    ga('send', 'pageview');
-
+        ga('create', 'UA-11818664-1', 'auto');
+        ga('send', 'pageview');
     </script>
 </body>
+
 </html>
