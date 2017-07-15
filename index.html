@@ -7,16 +7,56 @@
     <meta name="description" content="Designer and developer currently based in London, UK">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <style media="screen">
-        /* For the sake of simplicity no classes were used */
+    <script>
+        // Color schemes generated from http://jxnblk.com/hello-color/
+        var colorScheme = [
+            {
+                bg: "hsl(96, 35%, 78%)",
+                text: "hsl(275, 36%, 24%)",
+                invisible: "hsl(96, 35%, 68%)",
+            },
+            {
+                bg: "hsl(338, 100%, 45%)",
+                text: "hsl(157, 95%, 57%)",
+                invisible: "hsl(338, 100%, 35%)",
+            },
+            {
+                bg: "hsl(299, 36%, 39%)",
+                text: "hsl(119, 37%, 60%)",
+                invisible: "hsl(299, 36%, 29%)",
+            },
+            {
+                bg: "hsl(77, 87%, 44%)",
+                text: "hsl(257, 88%, 57%)",
+                invisible: "hsl(77, 87%, 34%)",
+            },
+            {
+                bg: "hsl(229, 51%, 38%)",
+                text: "hsl(49, 47%, 61%)",
+                invisible: "hsl(229, 51%, 28%)",
+            }
+        ]
+        var color = colorScheme[Math.floor(Math.random() * colorScheme.length)];
+        var css = ":root { \
+                    --bg-color: " + color.bg + "; \
+                    --text-color: " + color.text + "; \
+                    --invisible-color: " + color.invisible + "; \
+                    --spacing: 8px;\
+                }";
 
-         :root {
-            --bg-color: hsl(10, 90%, 56%);
-            --text-color: hsl(0, 0%, 24%);
-            --text-light-color: hsl(10, 90%, 45%);
-            --hover-color: hsl(0, 0%, 14%);
-            --spacing: 8px;
+        var style = document.createElement('style');
+
+        style.type = 'text/css';
+        if (style.styleSheet) {
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(document.createTextNode(css));
         }
+
+        document.head.appendChild(style);
+    </script>
+    <style type="text/css">
+        /* For the sake of simplicity no classes were used */
 
         body {
             font: 16px/1.45 "Source Code Pro", sans-serif;
@@ -48,11 +88,10 @@
             background-size: .05em 1px, .05em 1px, 1px 1px;
             background-repeat: no-repeat, no-repeat, repeat-x;
             text-shadow: 0.03em 0 var(--bg-color), -0.03em 0 var(--bg-color), 0 0.03em var(--bg-color), 0 -0.03em var(--bg-color), 0.06em 0 var(--bg-color), -0.06em 0 var(--bg-color), 0.09em 0 var(--bg-color), -0.09em 0 var(--bg-color), 0.12em 0 var(--bg-color), -0.12em 0 var(--bg-color), 0.15em 0 var(--bg-color), -0.15em 0 var(--bg-color);
-            background-position: 0 87%, 100% 87%, 0 87%;
+            background-position: 0 95%, 100% 95%, 0 95%;
         }
 
         a:hover {
-            color: var(--hover-color);
             background: none;
         }
 
@@ -67,17 +106,11 @@
             position: relative;
             min-height: calc(var(--spacing) * 5);
         }
-        /* Adds mdash in a slighty hackerish way */
-        /*body>ul>li>span:not(:empty):before {
-            content: '\2014';
-            color: var(--text-light-color);
-
-        }*/
         /* Adds spacing dots for identation */
 
         body>ul>li>span:not(:empty):before {
             content: '\00B7\00B7\00B7\00B7';
-            color: var(--text-light-color);
+            color: var(--invisible-color);
             margin-left: calc(var(--spacing) * -5);
         }
 
@@ -91,7 +124,7 @@
 
         span:after {
             content: '\00AC';
-            color: var(--text-light-color);
+            color: var(--invisible-color);
         }
         /* Mobile-first approach */
 
